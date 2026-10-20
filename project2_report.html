@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Project 2 Report</title>
+        <style>
+            :root {
+                --color-neutral-95: hsl(220 10% 95%);
+                --color-neutral-90: hsl(220 10% 90%);
+                --color-neutral-80: hsl(220 10% 80%);
+                --color-neutral-70: hsl(220 10% 70%);
+                --color-neutral-60: hsl(220 10% 60%);
+                --color-neutral-50: hsl(220 10% 50%);
+                --color-neutral-40: hsl(220 10% 40%);
+                --color-neutral-30: hsl(220 10% 30%);
+                --color-neutral-20: hsl(220 10% 20%);
+                --color-neutral-10: hsl(220 10% 10%);
+            }
+
+            html {
+                font: 100%/1.5 system-ui;
+                counter-reset: figure;
+                background: var(--color-neutral-95);
+                max-width: min(75vw, 80em);
+                margin: 0 auto;
+            }
+
+            /* Headings */
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                line-height: 1.1;
+                font-weight: 600;
+                text-wrap: balance;
+            }
+
+            h1,
+            h2 {
+                border-bottom: 1px solid var(--color-neutral-80);
+                padding-bottom: 0.2em;
+            }
+
+            h1 {
+                margin-block: 1em 0.5rem;
+                font-size: clamp(2.5em, 150% + 2vh + 2vw, 10vmin);
+                font-weight: 800;
+
+                small {
+                    display: block;
+                    width: fit-content;
+                    padding: 0.2em 0.5em;
+                    margin-inline: auto;
+                    color: white;
+                    background: var(--color-neutral-40);
+                    font-size: 40%;
+                    text-transform: uppercase;
+                    white-space: nowrap;
+                }
+            }
+
+            h2 {
+                font-size: 180%;
+                color: var(--color-neutral-30);
+            }
+
+            h3 {
+                font-size: 130%;
+            }
+
+            /* Lists */
+
+            ul,
+            ol {
+                padding-inline-start: 2em;
+            }
+
+            li {
+                &::marker {
+                    color: var(--color-neutral-40);
+                }
+
+                + li {
+                    margin-top: 0.2em;
+                }
+            }
+
+            /* Sectioning elements */
+
+            header {
+                padding-block: 1em;
+                text-align: center;
+            }
+
+            main {
+                background: white;
+                color: var(--color-neutral-20);
+                border-radius: 1rem;
+                padding: 0.1rem 2rem;
+            }
+
+            /* Figures */
+
+            figure {
+                margin: 1em 0;
+                padding: 0.5rem;
+                margin-inline: -0.5em;
+                border: 1px solid var(--color-neutral-80);
+                box-shadow: 0 0.1em 0.2em var(--color-neutral-95);
+                text-align: center;
+                background: white;
+
+                > figcaption {
+                    font: 500 75% var(--font-sans);
+                    background: var(--color-neutral-95);
+                    padding: 0.5rem;
+                    margin: -0.5rem;
+                    margin-top: 0.5rem;
+                    counter-increment: figure;
+                    text-align: left;
+
+                    &::before {
+                        content: "Figure " counter(figure) ": ";
+                        font-weight: bold;
+                        color: var(--color-neutral-40);
+                    }
+
+                    a:not(:hover, :focus, :active) {
+                        color: inherit;
+                        text-decoration: underline;
+                        text-decoration-color: color-mix(
+                            in lab,
+                            currentColor,
+                            transparent 70%
+                        );
+                    }
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <h1>
+                <small>Project 2</small>
+                Persuasive or Deceptive Visualization?
+            </h1>
+
+            <p><strong>Saketh Birru, Randall Bassig, Phuong Do</strong> — <em>sbirru@ucsd.edu, rbassig@ucsd.edu, pndo@ucsd.edu</em></p>
+        </header>
+
+        <main>
+            <h2>Proposition:  Low-income countries are more affected by climate-related disasters than high-income countries 
+            </h2>
+
+            <section>
+                <h3>FOR the Proposition</h3>
+
+                <figure>
+                    <img src="Screenshot 2026-10-20 at 11.19.00 AM.png" alt="" />
+                    <figcaption>BRIEF CAPTION HERE.</figcaption>
+                </figure>
+
+                <p>Design Decisions and Rationale:</p>
+
+                <ul>
+                    <li>Vis #1
+                        Decision 1: using group mean instead of median for raw dist.
+                        Score: -1.5
+                        I used the mean because some very low income countries inflate that value. making the gap look larger than it actually is. We thought about using the mean but that makes the gap look smaller.
+                    </li>
+
+                    <li>Decision 2: Make the low income bar red and everything else gray.
+                        Score: 1
+                        The color makes the bar a lot more noticeable, emphasizing the effect presented. But this decision did not change any values so we think it's not that deceitful.  I considered choosing a different color, like blue, but that didn't pop out as much as the red.
+                        </li>
+
+                    <li>Decision 3: "8.3x the rate of high income countries"
+                        Score: 0.5
+                        - This number was not enlarged or exaggerated in any way, so we think it's okay. I considered not having this as part of the chart but I think it feels more impactful with it there.
+                        </li>
+
+                    <li>
+                        Vis #2
+                        Decision 1: Show every country as a dot, with the group median as a black bar
+                        Score: 1.5
+                        Plotting all countries keeps the data transparent. We considered a bar chart  but the strip plot looks more credible and was easier to see
+                    </li>
+
+                    <li>
+                        Decision 2: Add a “% of countries with >1% affected” annotation above each group
+                        Score: -1
+                        This turns the dot cloud into one number per group (58%, 43%, 27%, 4%), and the steady drop is the strongest evidence for the claim. The numbers are computed from the data, so they're accurate. But I picked the 1% threshold because it produces a better gradient.
+                    <li>
+
+                    <li>
+                        Decision 3: Using a color scale from red to gray
+                        Score: -0.5
+                        The colors fading makes the effect feel more harmful and makes the higher income label feel "safer". No values were changed for this. We thought of using more blueish colors but that didn't feel as impactful.
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>AGAINST the Proposition</h3>
+
+                <figure>
+                    <img src="IMAGE_FILENAME" alt="" />
+                    <figcaption>BRIEF CAPTION HERE.</figcaption>
+                </figure>
+
+                <p>Design Decisions and Rationale:</p>
+
+                <ul>
+                    <li>RATIONALE_1</li>
+                    <li>RATIONALE_2</li>
+                    <li>RATIONALE_3</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Final Reflection</h2>
+
+                <p>The pro-proposition side was straightforward, because the data really does show a gap. Median disaster impact falls at every step up the income ladder (about 1.25% to 0.85% to 0.35% to roughly 0%), so the work was mostly choosing which summary to show. The anti side was much harder. When we plotted the same indicator, the “not true” argument was mostly exceptions, and a reader could see that the high-income group sat near zero. To argue against the proposition, we ended up shifting the question from disasters that actually affected people to exposure (the share of population living below 5 meters). That shift was the biggest persuasive move in the project, and it was more consequential than any color or label. What surprised us was how little the individual design choices mattered compared with the choice of what to measure. Highlighting the Netherlands and UAE in orange, using a log scale, and sorting the bars all helped, but the real work was done by picking an indicator where wealthy countries look vulnerable.
+                    We also found that the same data could support opposite stories without any false numbers. The 8.3 times ratio, the “58% / 43% / 27% / 4%” annotations, and the top-15 bar chart are all computed correctly. The deception came from which statistic we reported (mean vs. median, a 1% threshold), which subset we showed (top 15 only), and which indicator we used. Our scores reflect this: the choices we rated most deceptive (-1.5) were about framing and measurement, and the ones we rated earnest (+2) were about making the data easier to read, like sorting bars and labeling GDP. Showing every country as a dot and putting GDP labels next to each bar were the choices that most helped a skeptical reader check our claim.
+                    We define ethical analysis and visualization as persuasion that a reader could verify and would not feel tricked by after seeing the full picture. A practical test is whether a choice would still work if we disclosed it. Emphasis through color, ordering, or choosing a defensible summary statistic passes. Choices that fail are the ones that only work when the reader doesnt notice them: hiding sample sizes, implying a measure means something it doesnt. A threshold chosen to produce a clean gradient is hard to place, since it is accurate but picked for effect. So we think the boundary comes down to whether the reader ends up with a belief the data supports. Persuasion that shapes attention is acceptable, and persuasion that creates a false impression is not. It also helps to name the slant, which is why documenting and scoring each decision was useful.gr
+                    </p>
+            </section>
+        </main>
+    <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"c822b88e119346678db149ed7b7721c9","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>
