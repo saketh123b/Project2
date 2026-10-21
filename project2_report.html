@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+<meta charset="utf-8" />
     <head>
         <title>Project 2 Report</title>
         <style>
@@ -220,9 +221,40 @@
                 <p>Design Decisions and Rationale:</p>
 
                 <ul>
-                    <li>RATIONALE_1</li>
-                    <li>RATIONALE_2</li>
-                    <li>RATIONALE_3</li>
+                    <li>Decision 1: Highlighted wealthy countries in orange
+                        Score: -1.0
+                       highlighted wealthy countries in orange while keeping the remaining countries gray. This helps emphasize that wealthy nations also face significant climate exposure, making their vulnerability appear more substantial than the overall distribution suggests.
+                       </li>
+                    <li>Decision 2: Use a logarithmic scale for GDP per capita
+                        Score: -0.5
+                       Used a logarithmic scale to display countries with different income levels on the same graph. This compresses the differences in wealth, making wealthy and poorer countries appear closer together.
+                       </li>
+                    <li>Decision 3: Focus on population living below 5 meters
+                        Score: -1.5
+                       Used low-elevation population percentages as an indicator of climate exposure. This highlights potential coastal vulnerability, which can be somewhat misleading because living at a lower elevation does not necessarily mean experiencing greater damage from climate-related disasters.
+                       </li>
+
+                    <figure>
+                        <img src="phuong_anti_vis.png" alt="" />
+                        <figcaption>BRIEF CAPTION HERE.</figcaption>
+                    </figure>
+                    <li>
+                        Decision 1: Including GDP labels next to each country
+                        Score: +2
+                        Added GDP per capita to provide information on the countries’ income levels and to show which countries are high and low income. This helps compare countries’ income levels with their low-elevation population exposure. 
+                    </li>
+                    <li>
+                        Decision 2: Showing top 15 countries with highest low-elevation population percentage
+                        Score: -1
+                        I chose the top 15 countries with the highest percentage of population living below 5 meters to focus the visualization on countries with particularly high exposure. This also shows climate-related exposure is not limited to one type of country, which is lower income countries.
+                    </li>
+
+                    <li>
+                        Decision 3: Sorting the bars by low-elevation population percentage
+                        Score: +2
+                        I sorted the bars from lowest to highest percentage so readers can easily compare the values and see which country has the highest percentage. 
+                    </li>
+    
                 </ul>
             </section>
 
